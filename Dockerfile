@@ -1,6 +1,6 @@
 FROM bullseye-20220822
 
-# renovate: datasource=repology depName=debian_stable/curl versioning=loose
+# renovate: datasource=repology depName=debian_11/curl versioning=loose
 ENV CURL_VERSION="4.2.0"
 
 RUN apt-get update && \
