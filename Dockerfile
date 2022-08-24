@@ -1,4 +1,4 @@
-FROM debian:stable-20220801
+FROM eclipse-temurin:17-alpine
 
 RUN apt update && \
       apt upgrade -y && \
