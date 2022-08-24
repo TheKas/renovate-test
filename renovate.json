@@ -3,15 +3,16 @@
   "extends": [
     "config:base"
   ],
-  "regexManagers": [
+ "regexManagers": [
     {
       "fileMatch": [
-        "(^|/)Dockerfile$"
+        "^Dockerfile$"
       ],
       "matchStrings": [
-        "#\\s*renovate:\\s*datasource=(?<datasource>.*?) depName=(?<depName>.*?)( versioning=(?<versioning>.*?))?\\sENV .*?_VERSION=\"?(?<currentValue>.*?)\"?\\s"
+        "(?:apt-get install) (?<depName>.+?)=(?<currentValue>.+?)(\\s*)(&&)?(\\s*)(\\\\?)$"
       ],
-      "versioningTemplate": "{{#if versioning}}{{versioning}}{{else}}semver{{/if}}"
+      "versioningTemplate": "loose",
+      "datasourceTemplate": "deb"
     }
   ]
 }
