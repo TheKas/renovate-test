@@ -6,13 +6,24 @@
   "regexManagers": [
     {
       "fileMatch": [
-        "^Dockerfile$"
+        "(^|/)Dockerfile$"
       ],
       "matchStrings": [
-        "(?:apt-get install) (?<depName>.+?)=(?<currentValue>.+?)(\\s*)(&&)?(\\s*)(\\\\?)$"
+        "#\\s*renovate:\\s*datasource=(?<datasource>.*?) depName=(?<depName>.*?)( versioning=(?<versioning>.*?))?\\sENV .*?_VERSION=\"?(?<currentValue>.*?)\"?\\s"
       ],
-      "versioningTemplate": "loose",
-      "datasourceTemplate": "deb"
+      "versioningTemplate": "{{#if versioning}}{{versioning}}{{else}}semver{{/if}}"
+    }
+  ],
+  {
+      "datasources": [
+        "repology"
+      ],
+      "packagePatterns": [
+        "^debian_stable/"
+      ],
+      "separateMajorMinor": false,
+      "groupName": "debian packages",
+      "groupSlug": "debian"
     }
   ]
 }
