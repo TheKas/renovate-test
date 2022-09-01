@@ -1,7 +1,7 @@
 FROM bullseye-20220822
 
 # renovate: datasource=repology depName=debian_11/curl versioning=loose
-ENV CURL_VERSION="7.74.0-1.3+deb11u1"
+ENV CURL_VERSION="7.73"
 
 RUN apt-get update && \
       apt-get upgrade -y && \
