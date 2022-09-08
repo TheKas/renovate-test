@@ -16,6 +16,10 @@
   ],
   "packageRules": [
     {
+      "matchDatasources": ["docker"],
+      "matchPackageNames": ["debian"]
+    },
+    {
       "datasources": [
         "repology"
       ],
