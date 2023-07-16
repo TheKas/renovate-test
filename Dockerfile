@@ -1,4 +1,4 @@
-FROM debian:bullseye
+FROM debian:bookworm
 
 # renovate: datasource=repology depName=debian_11/curl versioning=loose
 ENV CURL_VERSION="7.74.0-1.3+deb11u7"
